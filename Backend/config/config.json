@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Harsh@123",
+    "database": "diamond_bidding_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

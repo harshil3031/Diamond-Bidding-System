@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root variables for custom theme */
+:root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #c9a961;
+            --accent-light: #e8d5a8;
+            --text: #f8f9fa;
+            --text-muted: #adb5bd;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --card-bg: rgba(22, 33, 62, 0.6);
+            --border: rgba(201, 169, 97, 0.2);
+        }
+
+/* Global body */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #111827; /* Tailwind gray-900 fallback */
+  color: #f9fafb; /* Tailwind gray-50 fallback */
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #818cf8; /* lighter purple on hover */
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cards / Panels */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+/* Buttons */
+button {
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+  transition: all 0.3s ease;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(79, 70, 229, 0.6);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Inputs */
+input, select, textarea {
+  background: var(--input-bg);
+  color: #f9fafb;
+  border: 1px solid #374151;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.3);
+}
+
+/* Error messages */
+.error {
+  color: var(--error-color);
+  background: rgba(248, 113, 113, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  animation: pulse 1.2s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem;
+  }
+  button {
+    width: 100%;
+  }
+}
